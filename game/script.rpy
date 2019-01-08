@@ -61,7 +61,6 @@ label startVolumeOne:
 
     return
 
-#note: to edit the starting labels, you have to go into screens, under trollselect1. there might be some old gunk in there btw.
 label trollOne:
 
     # Don't worry about this stuff!
@@ -74,9 +73,9 @@ label trollOne:
     $ tdone = "\n\n*__________"
     # Initialise galekh's footnotes
     $ fndict = dict(
-    a1="1 This is a sample footnote, like the kind galekh uses.\nAnd you can click this too.{a=footnote:b1}{b}¹{/b}{/a}",
-    b1="1 This is a footnote inside a footnote.",
-    a2="1 Another footnote.",
+    note1="1 This is a sample footnote, like the kind galekh uses.\nAnd you can click this too.{a=footnote:note2}{b}¹{/b}{/a}",
+    note2="1 This is a footnote inside a footnote.",
+    note3="1 Another footnote.",
     )
 
     show image "gui/game_menu.png"
@@ -104,11 +103,11 @@ label trollOne:
 
     "Which is Tagora of course."
 
-    tspk "..."
+    tagora "..."
 
     show tagora ew at shudder
 
-    tspk "Why am I in another friendsim tutorial."
+    tagora "Why am I in another friendsim tutorial."
 
     tspk "Get out of my house." (amt = 5000, stmt="They aren't even paying me for this")
 
@@ -116,7 +115,7 @@ label trollOne:
 
     show tagora ew at shoveleft
 
-    galekh "Here is an example of how the footnotes work.{a=footnote:a1}{b}¹{/b}{/a} Example 2.{a=footnote:a2}{b}²{/b}{/a}"
+    galekh "Here is an example of how the footnotes work.{a=footnote:note1}{b}¹{/b}{/a} Example 2.{a=footnote:note3}{b}²{/b}{/a}"
 
     hide screen billcount
 

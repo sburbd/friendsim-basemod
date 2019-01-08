@@ -50,7 +50,6 @@ define config.hyperlink_handlers = { 'footnote' : show_footnote }
 define narrator = Character(window_background="gui/textbox/textbox_narration.png", what_font='font/courbd.ttf', what_size=22,  color='#000000', what_color='#000000')
 define op = Character(window_background="gui/textbox/textbox_blank.png", what_font='font/courbd.ttf', what_size=28,  color='#FFFFFF', what_color='#FFFFFF', what_xalign=0.5, what_text_align=0.5)
 
-#this is just to show you what a default character would look like. the colo*Ur is the text colour of the box, not of the textbox ^-^
 define tagora = Character("TAGORA", color='#FFFFFF', image="tagora", window_background="gui/textbox/textbox_teal.png", who_outlines=[ (4, "#008282") ],)
 define galekh = Character("GALEKH", color='#FFFFFF', image="galekh", window_background="gui/textbox/textbox_blue.png", who_outlines=[ (4, "#005682") ],)
 define lynera = Character("LYNERA", color='#FFFFFF', image="lynera", window_background="gui/textbox/textbox_jade.png", who_outlines=[ (4, "#0aa85b") ],)
@@ -60,6 +59,13 @@ define lynera = Character("LYNERA", color='#FFFFFF', image="lynera", window_back
 # Example character sprites
 image tagora ew = Image("images/sprites/tagora/Tagora_Ew.png", ypos=730, xanchor=640, yanchor=720)
 image tagora neutral = Image("images/sprites/tagora/Tagora_Neutral.png", ypos=730, xanchor=640, yanchor=720)
+# image tagora clasp = Image("images/sprites/tagora/Tagora_Clasp.png", ypos=730, xanchor=640, yanchor=720)
+# image tagora doc = Image("images/sprites/tagora/Tagora_Document.png", ypos=730, xanchor=640, yanchor=720)
+# image tagora help = Image("images/sprites/tagora/Tagora_Helpful.png", ypos=730, xanchor=640, yanchor=720)
+# image tagora mad = Image("images/sprites/tagora/Tagora_Hollering.png", ypos=730, xanchor=640, yanchor=720)
+# image tagora judge = Image("images/sprites/tagora/Tagora_Judging.png", ypos=730, xanchor=640, yanchor=720)
+# image tagora nervous = Image("images/sprites/tagora/Tagora_Nervous.png", ypos=730, xanchor=640, yanchor=720)
+# image tagora neutral2 = Image("images/sprites/tagora/Tagora_Neutral2.png", ypos=730, xanchor=640, yanchor=720)
 
 #############  BACKGROUNDS  ##################
 image bg tagora_int = "images/bgs/tagorainterior.png"
