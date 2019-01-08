@@ -6,7 +6,7 @@ init -1 python:
 
     def tspk(what, amt=0, stmt=None, **kwargs):
 
-        t(what, **kwargs)
+        tagora(what, **kwargs)
 
         global amount
         amount = amt
@@ -51,107 +51,34 @@ define narrator = Character(window_background="gui/textbox/textbox_narration.png
 define op = Character(window_background="gui/textbox/textbox_blank.png", what_font='font/courbd.ttf', what_size=28,  color='#FFFFFF', what_color='#FFFFFF', what_xalign=0.5, what_text_align=0.5)
 
 #this is just to show you what a default character would look like. the colo*Ur is the text colour of the box, not of the textbox ^-^
-define daraya = Character("DARAYA", color='#FFFFFF', image="daraya", window_background="gui/textbox/textbox_jade.png", who_outlines=[ (4, "#008141") ],)
-define t = Character("TAGORA", color='#FFFFFF', image="tagora", window_background="gui/textbox/textbox_teal.png", who_outlines=[ (4, "#008282") ],)
-define g = Character("GALEKH", color='#FFFFFF', image="galekh", window_background="gui/textbox/textbox_blue.png", who_outlines=[ (4, "#005682") ],)
+define tagora = Character("TAGORA", color='#FFFFFF', image="tagora", window_background="gui/textbox/textbox_teal.png", who_outlines=[ (4, "#008282") ],)
+define galekh = Character("GALEKH", color='#FFFFFF', image="galekh", window_background="gui/textbox/textbox_blue.png", who_outlines=[ (4, "#005682") ],)
+define lynera = Character("LYNERA", color='#FFFFFF', image="lynera", window_background="gui/textbox/textbox_jade.png", who_outlines=[ (4, "#0aa85b") ],)
 
 ##############  IMAGES  ######################
-# Daraya
 
-# Amisia
-image amisia pull = Image("images/sprites/amisia/amisia_hairpull.png", ypos=730, xanchor=640, yanchor=720)
-image amisia doubt = Image("images/sprites/amisia/amisia_doubt.png", ypos=730, xanchor=640, yanchor=720)
-image amisia fingers = Image("images/sprites/amisia/amisia_frame.png", ypos=730, xanchor=640, yanchor=720)
-image amisia growl = Image("images/sprites/amisia/amisia_growl.png", ypos=730, xanchor=640, yanchor=720)
-image amisia jumping = Image("images/sprites/amisia/amisia_jump.png", ypos=730, xanchor=640, yanchor=720)
-image amisia nya = Image("images/sprites/amisia/amisia_nya.png", ypos=730, xanchor=640, yanchor=720)
-image amisia ponder = Image("images/sprites/amisia/amisia_ponder.png", ypos=730, xanchor=640, yanchor=720)
-image amisia smile = Image("images/sprites/amisia/amisia_smile.png", ypos=730, xanchor=640, yanchor=720)
-image amisia happy = Image("images/sprites/amisia/amisia_smile2.png", ypos=730, xanchor=640, yanchor=720)
-image amisia smug = Image("images/sprites/amisia/amisia_smug.png", ypos=730, xanchor=640, yanchor=720)
-image amisia axe = Image("images/sprites/amisia/amisia_axe.png", ypos=730, xanchor=640, yanchor=720)
-image amisia confess = Image("images/sprites/amisia/amisia_confess.png", ypos=730, xanchor=640, yanchor=720)
-
-# Skylla
-image skylla anger = Image("images/sprites/skylla/skylla_anger.png", ypos=730, xanchor=640, yanchor=720)
-image skylla concern = Image("images/sprites/skylla/skylla_concern.png", ypos=730, xanchor=640, yanchor=720)
-image skylla depressed = Image("images/sprites/skylla/skylla_depressed.png", ypos=730, xanchor=640, yanchor=720)
-image skylla distress = Image("images/sprites/skylla/skylla_distress.png", ypos=730, xanchor=640, yanchor=720)
-image skylla happy = Image("images/sprites/skylla/skylla_happy.png", ypos=730, xanchor=640, yanchor=720)
-image skylla kickass = Image("images/sprites/skylla/skylla_kickass.png", ypos=730, xanchor=640, yanchor=720)
-image skylla numb = Image("images/sprites/skylla/skylla_numb.png", ypos=730, xanchor=640, yanchor=720)
-image skylla numb2 = Image("images/sprites/skylla/skylla_numb2.png", ypos=730, xanchor=640, yanchor=720)
-image skylla stand = Image("images/sprites/skylla/skylla_stand.png", ypos=730, xanchor=640, yanchor=720)
-image skylla talk = Image("images/sprites/skylla/skylla_talk.png", ypos=730, xanchor=640, yanchor=720)
-image skylla upset = Image("images/sprites/skylla/skylla_upset.png", ypos=730, xanchor=640, yanchor=720)
-
-# Polypa
-image polypa dejected = Image("images/sprites/polypa/polypa_dejected.png", ypos=730, xanchor=640, yanchor=720)
-image polypa neutral = Image("images/sprites/polypa/polypa_neutral.png", ypos=730, xanchor=640, yanchor=720)
-image polypa pleased = Image("images/sprites/polypa/polypa_pleased.png", ypos=730, xanchor=640, yanchor=720)
-image polypa scuffle = Image("images/sprites/polypa/polypa_scuffle.png", ypos=730, xanchor=640, yanchor=720)
-image polypa serious = Image("images/sprites/polypa/polypa_serious.png", ypos=730, xanchor=640, yanchor=720)
-image polypa shocked = Image("images/sprites/polypa/polypa_shocked.png", ypos=730, xanchor=640, yanchor=720)
-
-# Zebruh
-image zebruh disgust = Image("images/sprites/zebruh/zebruh_disgust.png", ypos=730, xanchor=640, yanchor=720)
-image zebruh displeased = Image("images/sprites/zebruh/zebruh_displeased.png", ypos=730, xanchor=640, yanchor=720)
-image zebruh excited = Image("images/sprites/zebruh/zebruh_excited.png", ypos=730, xanchor=640, yanchor=720)
-image zebruh huh = Image("images/sprites/zebruh/zebruh_huh.png", ypos=730, xanchor=640, yanchor=720)
-image zebruh showoff = Image("images/sprites/zebruh/zebruh_showoff.png", ypos=730, xanchor=640, yanchor=720)
-image zebruh stand = Image("images/sprites/zebruh/zebruh_stand.png", ypos=730, xanchor=640, yanchor=720)
-image zebruh talk = Image("images/sprites/zebruh/zebruh_talk.png", ypos=730, xanchor=640, yanchor=720)
-image zebruh upset = Image("images/sprites/zebruh/zebruh_upset.png", ypos=730, xanchor=640, yanchor=720)
-image zebruh wink = Image("images/sprites/zebruh/zebruh_wink.png", ypos=730, xanchor=640, yanchor=720)
-
-# Konyyl
-image konyyl ask = Image("images/sprites/konyyl/Konyyl_ask.png", ypos=730, xanchor=640, yanchor=720)
-image konyyl attack = Image("images/sprites/konyyl/Konyyl_attack.png", ypos=730, xanchor=640, yanchor=720)
-image konyyl defeated = Image("images/sprites/konyyl/Konyyl_defeated.png", ypos=730, xanchor=640, yanchor=720)
-image konyyl laugh = Image("images/sprites/konyyl/Konyyl_laugh.png", ypos=730, xanchor=640, yanchor=720)
-image konyyl menacing = Image("images/sprites/konyyl/Konyyl_menacing.png", ypos=730, xanchor=640, yanchor=720)
-image konyyl neutral = Image("images/sprites/konyyl/Konyyl_neutral.png", ypos=730, xanchor=640, yanchor=720)
-image konyyl sad = Image("images/sprites/konyyl/Konyyl_sad.png", ypos=730, xanchor=640, yanchor=720)
-image konyyl surprised = Image("images/sprites/konyyl/Konyyl_surprised.png", ypos=730, xanchor=640, yanchor=720)
-image konyyl thinking = Image("images/sprites/konyyl/Konyyl_thinking.png", ypos=730, xanchor=640, yanchor=720)
-image konyyl why = Image("images/sprites/konyyl/Konyyl_why.png", ypos=730, xanchor=640, yanchor=720)
-
-# Tyzias
-image tyzias grimace = Image("images/sprites/tyzias/Tyzias_grimace.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias irritated = Image("images/sprites/tyzias/Tyzias_irritated.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias irritatedtalk = Image("images/sprites/tyzias/Tyzias_irritatedtalk.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias laugh = Image("images/sprites/tyzias/Tyzias_laugh.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias miserable = Image("images/sprites/tyzias/Tyzias_miserable.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias mugglare = Image("images/sprites/tyzias/Tyzias_mugglare.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias sad = Image("images/sprites/tyzias/Tyzias_sad.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias sip = Image("images/sprites/tyzias/Tyzias_sip.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias siplook = Image("images/sprites/tyzias/Tyzias_siplook.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias talk = Image("images/sprites/tyzias/Tyzias_talk.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias weary = Image("images/sprites/tyzias/Tyzias_weary.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias workedup = Image("images/sprites/tyzias/Tyzias_workedup.png", ypos=730, xanchor=640, yanchor=720)
-image tyzias workedup2 = Image("images/sprites/tyzias/Tyzias_workedup2.png", ypos=730, xanchor=640, yanchor=720)
-
-# Mallek
-image mallek down = Image("images/sprites/mallek/mallek_down.png", ypos=730, xanchor=640, yanchor=720)
-image mallek drones = Image("images/sprites/mallek/mallek_drones.png", ypos=730, xanchor=640, yanchor=720)
-image mallek grin = Image("images/sprites/mallek/mallek_grin.png", ypos=730, xanchor=640, yanchor=720)
-image mallek interest = Image("images/sprites/mallek/mallek_interest.png", ypos=730, xanchor=640, yanchor=720)
-image mallek laugh = Image("images/sprites/mallek/mallek_laugh.png", ypos=730, xanchor=640, yanchor=720)
-image mallek neutral = Image("images/sprites/mallek/mallek_neutral.png", ypos=730, xanchor=640, yanchor=720)
-image mallek pissed = Image("images/sprites/mallek/mallek_pissed.png", ypos=730, xanchor=640, yanchor=720)
-image mallek really = Image("images/sprites/mallek/mallek_really.png", ypos=730, xanchor=640, yanchor=720)
-image mallek unsure = Image("images/sprites/mallek/mallek_scrutinyannoyance.png", ypos=730, xanchor=640, yanchor=720)
+# Example character sprites
+image tagora ew = Image("images/sprites/tagora/Tagora_Ew.png", ypos=730, xanchor=640, yanchor=720)
+image tagora neutral = Image("images/sprites/tagora/Tagora_Neutral.png", ypos=730, xanchor=640, yanchor=720)
 
 #############  BACKGROUNDS  ##################
-image bg mc_hideout = "images/bgs/mc_hideout.png"
-image bg alternia3 = "images/bgs/background3.png"
-
-image bg tagora_bath = "images/bgs/tagorabath.png"
 image bg tagora_int = "images/bgs/tagorainterior.png"
 image bg tagora_ext = "images/bgs/tagoraexterior.png"
 
+############### ENDINGS ########################
+image sample_ending = "images/bgs/ending.jpg"
+
 ################# MISC IMAGES #################
+# tagora's money
 image money = "images/-money/cashmoney.png"
+
+# lynera's knives
+image knife0 = Image("images/-knife/knifemeter.png")
+image knife1 = Image("images/-knife/knifemeter1.png")
+image knife2 = Image("images/-knife/knifemeter2.png")
+image knife3 = Image("images/-knife/knifemeter3.png")
+image knife4 = Image("images/-knife/knifemeter4.png")
+image knife5 = Image("images/-knife/knifemeter5.png")
 
 ## COMMON TRANSFORMS ##
 #these are all transforms to make your sprite bounce around a little! it's super useful for making your game more dynamic
@@ -215,6 +142,9 @@ transform shoveright:
 transform shoveleft:
     xpos 640
     linear 0.1 xpos 320
+
+transform shovecenter:
+    linear 0.1 xpos 640
 
 transform shoveoffleft:
     linear 0.1 xpos -320

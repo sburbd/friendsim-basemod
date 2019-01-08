@@ -1,2 +1,3 @@
 # friendsim-basemod
-Basemod files for fan friendsims
+
+Basemod files for the [fansim tutorial](https://sburbd.github.io/fansim).

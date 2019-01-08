@@ -66,12 +66,18 @@ label trollOne:
 
     # Don't worry about this stuff!
     $ renpy.block_rollback()
-
     $ main_menu = False
 
+    # initialise tagora's starting bill as 0
     $ bill = 0
-
+    # initialise tagora's quirk so you can use it again without typing it out. you can see this as [tdone] at the end of his lines
     $ tdone = "\n\n*__________"
+    # Initialise galekh's footnotes
+    $ fndict = dict(
+    a1="1 This is a sample footnote, like the kind galekh uses.\nAnd you can click this too.{a=footnote:b1}{b}¹{/b}{/a}",
+    b1="1 This is a footnote inside a footnote.",
+    a2="1 Another footnote.",
+    )
 
     show image "gui/game_menu.png"
 
@@ -82,40 +88,64 @@ label trollOne:
 
     op "Right now the screen is black and this text by the speaker is being shown."
 
-    op "Once the person clicks, they get to this new speaking line. Now let's go to Tagora's house"
+    op "Once the person clicks, they get to this new speaking line. Now let's go to Tagora's house."
 
     scene bg tagora_int with dissolve
 
     $ quick_menu = True
 
-    narrator "We are now in Tagora's house."
+    narrator "Oh look it's the best friendsim character."
 
-    play music "music/tagora_theme.mp3" loop
+    play music "music/sample.mp3" loop
 
-    show robegor neutral with moveinbottom
+    show tagora neutral with moveinbottom
 
     show screen billcount
 
-    "And now Tagora has noticed us."
+    "Which is Tagora of course."
 
     tspk "..."
 
-    show robegor disgust at shudder
+    show tagora ew at shudder
 
-    tspk "Why am I in another friendsim." (amt = 5000, stmt="Unsolicited visitation")
+    tspk "Why am I in another friendsim tutorial."
+
+    tspk "Get out of my house." (amt = 5000, stmt="They aren't even paying me for this")
+
+    show bg tagora_ext with CropMove(1.0, "wipeleft")
+
+    show tagora ew at shoveleft
+
+    galekh "Here is an example of how the footnotes work.{a=footnote:a1}{b}¹{/b}{/a} Example 2.{a=footnote:a2}{b}²{/b}{/a}"
+
+    hide screen billcount
+
+    show knife0
+
+    lynera "-this is me speaking to show you how my knife quirk works"
+
+    hide knife0
+
+    show knife5
+
+    lynera "-notice that I had to !!! hide !!! Gor-gor's billcount screen to show my knives. you'll have to take this into consideration when you make your friendsims!"
+
+    hide knife5
+
+    show knife3
+
+    lynera "-or maybe you can find a workaround if you put in the effort probably"
 
     menu:
-        "Well? Why is he in another friendsim?"
+        "This is a menu?"
 
-        "[pick] I have no idea":
+        "[pick] Yes and this is an option":
 
-            show robegor disgust at bounce
+            show tagora ew at bounce
 
-            tspk "This wasn't in my contract. [tdone]" (amt = 20)
+            tspk "Please leave my house. [tdone]" (amt = 420)
 
-            "You can feel his friendship slipping away."
-
-            hide screen billcount
+            "Guess that's all we have time for. Hopefully this is an adequate example script!"
 
             $ renpy.pause(0.5)
 
@@ -123,7 +153,7 @@ label trollOne:
 
             play music "music/game_over.mp3" fadeout 1.0 noloop
 
-            scene tagora_bad_ending with Dissolve(1.0)
+            scene sample_ending with Dissolve(1.0)
 
             $ renpy.pause()
 
@@ -133,19 +163,17 @@ label trollOne:
 
             return
 
-        "[pick] Banavalope is making a friendsim!":
+        "[pick] Nice":
 
-            show robegor neutral at default
+            show tagora neutral at shovecenter
 
-            tspk "Sounds interesting." (amt = 220, stmt="Ego boosted")
-
-            hide screen billcount
+            tspk "Nice." (amt = 69, stmt="Nice")
 
             $ quick_menu = False
 
             play music "music/victory_jingle.mp3" fadeout 1.0 noloop
 
-            scene tagora_good_ending with Dissolve(1.0)
+            scene sample_ending with Dissolve(1.0)
 
             $ renpy.pause()
 
@@ -154,6 +182,20 @@ label trollOne:
             scene black with Dissolve(1.0)
 
             return
+
+label trollTwo:
+
+    $ renpy.block_rollback()
+
+    $ main_menu = False
+
+    show image "gui/game_menu.png"
+
+    window hide
+
+    scene black with Dissolve(1.5)
+
+    op "You could put the script for a second volume here."
 
 label startVolumeTwo:
 
